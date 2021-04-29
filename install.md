@@ -9,8 +9,7 @@ add comment=Download-BlackList dont-require-permissions=yes name=\
     s.me mode=https src-path=/blacklists.co.rsc dst-path=/blacklists.co.rsc"
 add comment=Run-Impert-BlackList dont-require-permissions=no name=\
     Blacklist_SquidBlacklist_Import_drop.malicious.rsc owner=vence policy=\
-    read,write source="import /blacklists.co.rsc\r\
-    \n"
+    read,write source="import /blacklists.co.rsc\r\n"
 
 2. 安裝RAW阻擋到RB:
 
