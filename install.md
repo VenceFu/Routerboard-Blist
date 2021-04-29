@@ -17,6 +17,7 @@ add comment=Run-Impert-BlackList dont-require-permissions=no name=\
 /ip firewall raw
 
 add action=accept chain=prerouting src-address-list=Good-IP
+
 add action=drop chain=prerouting src-address-list=vBlock
 
 
