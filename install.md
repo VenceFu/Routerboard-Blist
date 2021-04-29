@@ -3,6 +3,7 @@
 1. 安裝下載語法到RB :
 
 /system script
+
 add comment=Download-BlackList dont-require-permissions=yes name=\
     Blacklist_SquidBlacklist_Download_drop.malicious.rsc owner=vence policy=\
     read,write,test source="/tool fetch address=list.downus.me host=list.downu\
