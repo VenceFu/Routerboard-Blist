@@ -1,6 +1,7 @@
 
 
 1. 安裝下載語法到RB :
+
 /system script
 add comment=Download-BlackList dont-require-permissions=yes name=\
     Blacklist_SquidBlacklist_Download_drop.malicious.rsc owner=vence policy=\
@@ -12,10 +13,12 @@ add comment=Run-Impert-BlackList dont-require-permissions=no name=\
     \n"
 
 2. 安裝RAW阻擋到RB:
+
 /ip firewall raw
 add action=drop chain=prerouting src-address-list=vBlock
 
 3. 安裝scheduler到RB
+
 /system scheduler
 add interval=1h name=BlackList_AutoDownload_Impert on-event="/system script r\
     un Blacklist_SquidBlacklist_Download_drop.malicious.rsc\r\
