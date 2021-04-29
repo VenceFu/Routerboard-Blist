@@ -7,6 +7,7 @@ add comment=Download-BlackList dont-require-permissions=yes name=\
     Blacklist_SquidBlacklist_Download_drop.malicious.rsc owner=vence policy=\
     read,write,test source="/tool fetch address=list.downus.me host=list.downu\
     s.me mode=https src-path=/blacklists.co.rsc dst-path=/blacklists.co.rsc"
+    
 add comment=Run-Impert-BlackList dont-require-permissions=no name=\
     Blacklist_SquidBlacklist_Import_drop.malicious.rsc owner=vence policy=\
     read,write source="import /blacklists.co.rsc\r\n"
@@ -14,11 +15,15 @@ add comment=Run-Impert-BlackList dont-require-permissions=no name=\
 2. 安裝RAW阻擋到RB:
 
 /ip firewall raw
+
+add action=accept chain=prerouting src-address-list=Good-IP
 add action=drop chain=prerouting src-address-list=vBlock
+
 
 3. 安裝scheduler到RB
 
 /system scheduler
+
 add interval=1h name=BlackList_AutoDownload_Impert on-event="/system script r\
     un Blacklist_SquidBlacklist_Download_drop.malicious.rsc\r\
     \n/system script run   Blacklist_SquidBlacklist_Import_drop.malicious.rsc\
