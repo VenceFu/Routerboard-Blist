@@ -12,6 +12,8 @@
 
 Source Code將不會在此公開
 
+注意:禁止使用於任何商業行為
+
 這份清單裡的IP包含了已知的駭客中繼站、可疑或信譽評等差的IP、還有透過honeypot誘捕到的駭客IP
 
 請注意!! 在這份清單匯入時，會一口氣將數萬個IP加入到你的Firewall IP Address list 清單內
