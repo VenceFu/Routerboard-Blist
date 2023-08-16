@@ -1,7 +1,7 @@
 
 
 1. 安裝下載語法到RB :
-
+(a.For CCR high performance models)
 /system script
 
 add comment=Download-BlackList dont-require-permissions=yes name=\
@@ -12,6 +12,29 @@ add comment=Download-BlackList dont-require-permissions=yes name=\
 add comment=Run-Impert-BlackList dont-require-permissions=no name=\
     Blacklist_SquidBlacklist_Import_drop.malicious.rsc owner=vence policy=\
     read,write source="import /blacklists.co.rsc\r\n"
+
+(b.For RB series models)
+
+/system script
+
+add comment=Download-BlackList dont-require-permissions=yes name=\
+    Blacklist_SquidBlacklist_Download_drop.malicious.rsc owner=admin policy=\
+    read,write,test source="/tool fetch address=list.downus.me host=list.downu\
+    s.me mode=https src-path=/blacklists.co.rscaa dst-path=/blacklists1.co.rsc\
+    /tool fetch address=list.downus.me host=list.downus.me mode=https src-path=/blacklists.co.rscab dst-path=/blacklists2.co.rsc \
+    /tool fetch address=list.downus.me host=list.downus.me mode=https src-path=/blacklists.co.rscac dst-path=/blacklists3.co.rsc \
+    /tool fetch address=list.downus.me host=list.downus.me mode=https src-path=/blacklists.co.rscad dst-path=/blacklists4.co.rsc \
+    /tool fetch address=list.downus.me host=list.downus.me mode=https src-path=/blacklists.co.rscae dst-path=/blacklists5.co.rsc \
+    "
+
+    
+aadd comment=Run-Impert-BlackList dont-require-permissions=no name=Blacklist_SquidBlacklist_Import_drop.malicious.rsc owner=admin policy=read,write source=\
+    "import /blacklists1.co.rsc \
+    import /blacklists2.co.rsc \
+    import /blacklists3.co.rsc \
+    import /blacklists4.co.rsc \
+    import /blacklists5.co.rsc"
+
 
 2. 安裝RAW阻擋到RB:
 
