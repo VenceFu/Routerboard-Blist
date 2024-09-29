@@ -12,7 +12,7 @@ add comment=Download-BlackList dont-require-permissions=yes name=\
 
 add comment=Run-Impert-BlackList dont-require-permissions=no name=\
     Blacklist_SquidBlacklist_Import_drop.malicious.rsc owner=vence policy=\
-    read,write source="import /blacklists.co.rsc\r\n"
+    read,write source="import /blacklists.co.rsc verbose=yes\r\n"
 ```
 
 ### For RB series models
