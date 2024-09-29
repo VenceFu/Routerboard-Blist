@@ -39,3 +39,7 @@ PS:當你提供的情資資料，請確保這份資料讓我提供給多位使�
 
 安裝操作我將會寫在Install裡面
 
+2024/9/24 更新
+1. 情資來源擴大，所以總筆數增加
+2. ROS在執行大型script需增加 verbose=yes ，請自行更新 import 語法成 : import /blacklists.co.rsc verbose=yes (已更新在install.md)
+
